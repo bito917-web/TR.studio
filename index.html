@@ -77,15 +77,15 @@ em.s { font-family: var(--serif); font-style: italic; font-weight: 400; letter-s
 .bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
 .bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 75%; filter: brightness(.42) saturate(1.15) contrast(1.08); transform: scale(1.08); transition: transform 2.6s var(--ease), filter 1.2s var(--ease); }
 .ready .bg img { transform: scale(1); }
-body.in-view .bg img { filter: brightness(.22) saturate(1) contrast(1.05) blur(2px); transform: scale(1.04); }
+body.in-view .bg img { filter: brightness(.22) saturate(1) contrast(1.05); transform: scale(1.04); }
 .bg::after { content: ""; position: absolute; inset: 0; background:
   radial-gradient(120% 80% at 70% 40%, transparent 0%, rgba(3,6,14,.55) 70%, rgba(3,6,14,.92) 100%),
   linear-gradient(180deg, rgba(3,6,14,.75) 0%, rgba(3,6,14,.15) 26%, rgba(3,6,14,.35) 70%, rgba(3,6,14,.95) 100%); }
-.grain { position: fixed; inset: -50%; z-index: 1; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation: grain 1.2s steps(6) infinite; }
+.grain { position: fixed; inset: -50%; z-index: 1; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity: .05; }
 @keyframes grain { 0% { transform: translate(0, 0); } 33% { transform: translate(-3%, 2%); } 66% { transform: translate(2%, -3%); } 100% { transform: translate(0, 0); } }
 .gl { position: fixed; z-index: 2; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; transition: opacity 1.4s var(--ease) .2s, filter 1s var(--ease); }
 .gl-on .gl { opacity: 1; }
-body.in-view .gl { opacity: .22; filter: blur(3px); }
+body.in-view .gl { opacity: .18; }
 
 /* ---------- top bar & menu over the wallpaper ---------- */
 .top { position: fixed; z-index: 50; inset: 0 0 auto 0; height: var(--top); display: flex; align-items: center; gap: 22px; padding: 0 var(--pad); background: linear-gradient(180deg, rgba(3,6,14,.75), rgba(3,6,14,0)); }
@@ -118,7 +118,7 @@ body.in-view .gl { opacity: .22; filter: blur(3px); }
 .view { position: fixed; z-index: 10; inset: var(--top) 0 0 0; overflow-y: auto; overscroll-behavior: contain; opacity: 0; visibility: hidden; transform: translateY(26px) scale(.985); filter: blur(6px); transition: opacity .6s var(--ease), transform .7s var(--snap), filter .6s var(--ease), visibility 0s linear .7s; -webkit-overflow-scrolling: touch; }
 .view.on { opacity: 1; visibility: visible; transform: none; filter: none; transition: opacity .7s var(--ease) .12s, transform .8s var(--snap) .12s, filter .7s var(--ease) .12s, visibility 0s; }
 .view__in { max-width: 1240px; margin: 0 auto; padding: clamp(18px, 3vw, 34px) var(--pad) 60px; }
-.panel { position: relative; border-radius: 28px; padding: clamp(26px, 4vw, 52px); background: linear-gradient(180deg, rgba(14,22,42,.72), rgba(7,11,22,.78)); border: 1px solid var(--line); backdrop-filter: blur(24px) saturate(1.2); -webkit-backdrop-filter: blur(24px) saturate(1.2); box-shadow: 0 40px 120px -40px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.06); }
+.panel { position: relative; border-radius: 28px; padding: clamp(26px, 4vw, 52px); background: linear-gradient(180deg, rgba(14,22,42,.72), rgba(7,11,22,.78)); border: 1px solid var(--line); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 40px 120px -40px rgba(0,0,0,.8), inset 0 1px 0 rgba(255,255,255,.06); }
 .vhead { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px 50px; align-items: end; margin-bottom: clamp(26px, 4vw, 44px); }
 .kick { display: inline-flex; align-items: center; gap: 12px; font: 600 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--volt); }
 .kick b { font-weight: 600; color: var(--mute); }
@@ -130,7 +130,7 @@ body.in-view .gl { opacity: .22; filter: blur(3px); }
 /* home */
 .home { position: fixed; z-index: 10; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: calc(var(--top) + 10px) var(--pad) 0; pointer-events: none; transition: opacity .6s var(--ease), transform .8s var(--snap), filter .6s; }
 .home a, .home button { pointer-events: auto; }
-body.in-view .home { opacity: 0; transform: translateY(-20px) scale(.98); filter: blur(6px); visibility: hidden; transition: opacity .5s, transform .6s var(--snap), filter .5s, visibility 0s .6s; }
+body.in-view .home { opacity: 0; transform: translateY(-20px) scale(.98); visibility: hidden; transition: opacity .5s, transform .6s var(--snap), filter .5s, visibility 0s .6s; }
 .home__in { width: 100%; max-width: 1400px; margin: 0 auto; }
 .home__kick { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.05); border: 1px solid var(--line); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font: 500 13px/1 var(--sans); color: var(--soft); }
 .home__kick i { width: 7px; height: 7px; border-radius: 50%; background: #5ee3a0; box-shadow: 0 0 12px #5ee3a0; }
@@ -352,8 +352,8 @@ body.in-view .screen-label { opacity: 0; }
 
 /* ---------- fluid transitions ---------- */
 :root { --soft-ease: cubic-bezier(.25, .9, .3, 1); }
-.view { transition: opacity .55s var(--soft-ease), transform .75s var(--soft-ease), filter .55s var(--soft-ease), visibility 0s linear .75s; transform: translateY(18px) scale(.992); filter: blur(4px); }
-.view.on { transition: opacity .7s var(--soft-ease) .08s, transform .9s var(--soft-ease) .08s, filter .7s var(--soft-ease) .08s, visibility 0s; }
+.view { transition: opacity .55s var(--soft-ease), transform .75s var(--soft-ease), visibility 0s linear .75s; transform: translateY(18px) scale(.992); filter: none; will-change: opacity, transform; }
+.view.on { transition: opacity .7s var(--soft-ease) .08s, transform .9s var(--soft-ease) .08s, visibility 0s; }
 /* content inside each screen arrives in a gentle cascade */
 .view .panel > *, .view .grid4 > *, .view .grid2 > *, .view .steps > *, .view .facts > *, .view .founders > *, .view .pricing > *, .view .legal-links > *, .view .chips > *, .view .faq > *, .view .contact > * { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--soft-ease), transform .7s var(--soft-ease); }
 .view.on .panel > *, .view.on .grid4 > *, .view.on .grid2 > *, .view.on .steps > *, .view.on .facts > *, .view.on .founders > *, .view.on .pricing > *, .view.on .legal-links > *, .view.on .chips > *, .view.on .faq > *, .view.on .contact > * { opacity: 1; transform: none; }
@@ -954,7 +954,7 @@ window.__SCREENS__ = [
     if (!canvas || !T) return;
     var probe = document.createElement("canvas"); if (!(probe.getContext("webgl2") || probe.getContext("webgl"))) return;
     var renderer = new T.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    var maxDpr = Math.min(window.devicePixelRatio || 1, 1.5); renderer.setPixelRatio(maxDpr);
     renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.1; renderer.outputColorSpace = T.SRGBColorSpace;
     var scene = new T.Scene(), camera = new T.PerspectiveCamera(30, 1, 0.1, 100);
     var pmrem = new T.PMREMGenerator(renderer);
@@ -1061,22 +1061,27 @@ window.__SCREENS__ = [
     }
     // per-view poses
     var target = { x: 1.6, y: -.35, ry: -.5, s: 1 }, pose = { x: 4, y: -1.2, ry: -1.2, s: .8 };
+    var running = false, idle = false, idleAt = 0;
+    function start(ms) { idleAt = Math.max(idleAt, performance.now() + (ms || 0)); if (!running && visible) { running = true; last = performance.now(); requestAnimationFrame(loop); } }
     function setView(id) {
+      idle = id !== "inicio"; start(1100);
       if (id === "inicio") target = { x: small() ? 0 : 1.6, y: small() ? -1.55 : -.35, ry: -.5, s: small() ? .62 : 1 };
       else target = { x: small() ? 0 : 2.4, y: -.6, ry: -.9, s: .85 };
     }
     function small() { return window.innerWidth < 980; }
-    GL.setView = setView; GL.setScreen = setScreen;
+    GL.setView = setView; GL.setScreen = function (i) { setScreen(i); start(1300); };
 
     function resize() { var w = window.innerWidth, h = window.innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.position.set(0, 2.2, small() ? 11.5 : 9.2); camera.lookAt(0, .3, 0); camera.updateProjectionMatrix(); setView(current); }
     window.addEventListener("resize", resize); resize();
 
     var mx = 0, my = 0, cx = 0, cy = 0, t0 = performance.now(), last = performance.now(), cycle = 0;
     if (fine) window.addEventListener("pointermove", function (e) { mx = e.clientX / window.innerWidth - .5; my = e.clientY / window.innerHeight - .5; }, { passive: true });
-    var visible = true; document.addEventListener("visibilitychange", function () { visible = !document.hidden; if (visible) requestAnimationFrame(loop); });
+    var visible = true; document.addEventListener("visibilitychange", function () { visible = !document.hidden; if (visible) start(); });
+    var frames = 0, slow = 0, tuned = false;
     function loop() {
-      if (!visible) return;
-      var now = performance.now(), dt = Math.min(.05, (now - last) / 1000), t = (now - t0) / 1000; last = now;
+      if (!visible) { running = false; return; }
+      var now = performance.now(), raw = (now - last) / 1000, dt = Math.min(.05, raw), t = (now - t0) / 1000; last = now;
+      if (!tuned && frames++ > 20) { if (raw > 1 / 40) slow++; if (frames > 110) { tuned = true; if (slow > 35) { renderer.setPixelRatio(1); pts.visible = false; } } }
       var k = 1 - Math.pow(.0016, dt);           // smooth, critically-damped style easing
       ["x", "y", "ry", "s"].forEach(function (p) { pose[p] += (target[p] - pose[p]) * k; });
       cx += (mx - cx) * k; cy += (my - cy) * k;
@@ -1093,9 +1098,10 @@ window.__SCREENS__ = [
       updateKeys(t);
       if (current === "inicio" && !reduce) { cycle += dt; if (cycle > 5) { cycle = 0; setScreen(active + 1); } }
       renderer.render(scene, camera);
-      if (!reduce) requestAnimationFrame(loop);
+      if (reduce || (idle && now > idleAt)) { running = false; return; }
+      requestAnimationFrame(loop);
     }
-    root.classList.add("gl-on"); loop();
+    root.classList.add("gl-on"); start();
   }
   window.addEventListener("load", function () { safe(initGL, "gl"); });
 })();
