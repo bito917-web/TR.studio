@@ -1,6 +1,6 @@
-# Marea Estudio
+# TR Studio
 
-Web de Marea Estudio, estudio de diseño y desarrollo web en Cambrils (Biel Torres y Marxal Rofes).
+Web de TR Studio, estudio de diseño y desarrollo web en Cambrils (Biel Torres y Marxal Rofes).
 
 Es una web estática de un solo archivo (`index.html`): fuentes, imágenes y código van incluidos, sin dependencias externas ni cookies.
 
