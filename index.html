@@ -428,6 +428,13 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 }
 </style>
 <script>document.documentElement.classList.add("js");</script>
+<noscript><style>
+  body { overflow: auto; } .intro, .hero-sk, .gl, .screen-label, .burger, .mmenu { display: none !important; }
+  .home { position: relative; min-height: 100vh; pointer-events: auto; } .home h1 .ln > span { transform: none; }
+  .view { position: relative; inset: auto; opacity: 1; visibility: visible; transform: none; filter: none; overflow: visible; }
+  .view .panel > *, .view :is(.grid4, .grid2, .steps, .facts, .founders, .pricing, .legal-links, .chips, .faq, .contact) > * { opacity: 1; transform: none; }
+  .back { display: none; } .sk img { opacity: 1; }
+</style></noscript>
 </head>
 <body>
 
@@ -509,7 +516,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
     </div>
   </div>
   <div class="home__bar fade">
-    <div><strong>299,99 €</strong><span>Web completa, pago único</span></div>
+    <div><strong>299,99 €</strong><span>Web completa, IVA incluido</span></div>
     <div><strong>1–2 sem</strong><span>Plazo medio de entrega</span></div>
     <div><strong>&lt;12 h</strong><span>Tiempo de respuesta</span></div>
     <div><strong>0 €</strong><span>Boceto previo</span></div>
@@ -588,7 +595,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
       <div><p class="kick">03 <b>/ Proyectos</b></p><h2 id="t-pr">Webs reales, <em class="s">ya funcionando.</em></h2></div>
-      <p>Desliza para ver cada proyecto. Puedes entrar y verlos en vivo.</p>
+      <p>Una selección de 3 de las 8 webs que hemos publicado. Desliza para verlas y entra a probarlas en vivo.</p>
     </div>
     <div class="rail" data-rail>
       <article class="case" data-case="0">
@@ -628,14 +635,14 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
       <p>Una web completa con todo incluido y, si quieres olvidarte de ella, un mantenimiento mensual sin permanencia.</p>
     </div>
     <div class="pricing">
-      <article class="plan plan--main"><p class="plan__tag">Todo incluido</p><h3>Web completa</h3><p class="plan__price"><span>299,99</span> €<small>pago único</small></p><p class="plan__desc">Tu negocio online, con reservas y diseño a medida.</p>
+      <article class="plan plan--main"><p class="plan__tag">Todo incluido</p><h3>Web completa</h3><p class="plan__price"><span>299,99</span> €<small>pago único · IVA incl.</small></p><p class="plan__desc">Tu negocio online, con reservas y diseño a medida.</p>
         <ul><li><svg class="ic"><use href="#i-check"/></svg>Diseño a medida, adaptado al móvil</li><li><svg class="ic"><use href="#i-check"/></svg>Reservas online o contacto por WhatsApp</li><li><svg class="ic"><use href="#i-check"/></svg>3D y animaciones cuando aportan</li><li><svg class="ic"><use href="#i-check"/></svg>SEO local y ficha de Google</li><li><svg class="ic"><use href="#i-check"/></svg>SSL, aviso legal, privacidad y cookies</li><li><svg class="ic"><use href="#i-check"/></svg>Formación para gestionarla</li></ul>
-        <a class="btn btn--volt" href="#contacto" data-wa data-wa-text="¡Hola! Me interesa la web completa de 299,99 €. ¿Podemos hablar? ¡Gracias!">La quiero</a></article>
-      <article class="plan"><h3>Mantenimiento</h3><p class="plan__price"><span>25</span> €<small>/ mes</small></p><p class="plan__desc">Te olvidas de la web y nosotros nos encargamos.</p>
+        <a class="btn btn--volt" href="#contacto" data-wa data-wa-text="¡Hola! Me interesa la web completa de 299,99 € (IVA incluido). ¿Podemos hablar? ¡Gracias!">La quiero</a></article>
+      <article class="plan"><h3>Mantenimiento</h3><p class="plan__price"><span>25</span> €<small>/ mes · IVA incl.</small></p><p class="plan__desc">Te olvidas de la web y nosotros nos encargamos.</p>
         <ul><li><svg class="ic"><use href="#i-check"/></svg>Cambios de precios, fotos y horarios</li><li><svg class="ic"><use href="#i-check"/></svg>Hosting y revisión de que todo funciona</li><li><svg class="ic"><use href="#i-check"/></svg>Soporte directo por WhatsApp</li><li><svg class="ic"><use href="#i-check"/></svg>Sin permanencia</li></ul>
         <a class="btn btn--ghost" href="#contacto" data-wa data-wa-text="¡Hola! Me interesa el mantenimiento mensual de mi web. ¿Me contáis cómo funciona? ¡Gracias!">Me interesa</a></article>
     </div>
-    <p class="note">El boceto es gratis: si no te convence, no pagas nada. Después, la mitad al empezar y la mitad al entregar. El dominio (tunegocio.es) va aparte, desde 10 € al año.</p>
+    <p class="note">Todos los precios incluyen IVA. El boceto es gratis: si no te convence, no pagas nada. Después, la mitad al empezar y la mitad al entregar. El dominio (tunegocio.es) va aparte, desde 10 € al año.</p>
     <h3 class="sub">Preguntas frecuentes</h3>
     <div class="faq">
       <details><summary>¿Cuánto tarda en estar lista?</summary><p>Entre una y dos semanas desde que tenemos tus fotos y textos.</p></details>
@@ -954,7 +961,8 @@ window.__SCREENS__ = [
     if (!canvas || !T) return;
     var probe = document.createElement("canvas"); if (!(probe.getContext("webgl2") || probe.getContext("webgl"))) return;
     var renderer = new T.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
-    var maxDpr = Math.min(window.devicePixelRatio || 1, 1.5); renderer.setPixelRatio(maxDpr);
+    var lite = window.matchMedia("(max-width: 980px), (pointer: coarse)").matches || (navigator.hardwareConcurrency || 8) <= 4;
+    var maxDpr = lite ? 1 : Math.min(window.devicePixelRatio || 1, 1.5); renderer.setPixelRatio(maxDpr);
     renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.1; renderer.outputColorSpace = T.SRGBColorSpace;
     var scene = new T.Scene(), camera = new T.PerspectiveCamera(30, 1, 0.1, 100);
     var pmrem = new T.PMREMGenerator(renderer);
@@ -1081,7 +1089,8 @@ window.__SCREENS__ = [
     function loop() {
       if (!visible) { running = false; return; }
       var now = performance.now(), raw = (now - last) / 1000, dt = Math.min(.05, raw), t = (now - t0) / 1000; last = now;
-      if (!tuned && frames++ > 20) { if (raw > 1 / 40) slow++; if (frames > 110) { tuned = true; if (slow > 35) { renderer.setPixelRatio(1); pts.visible = false; } } }
+      if (lite && raw < 1 / 32 && fade >= 1) { requestAnimationFrame(loop); last = now - raw * 1000; return; }   // ~30 fps on phones
+      if (!tuned && frames++ > 20) { if (raw > 1 / 40) slow++; if (frames > 110) { tuned = true; if (slow > 35) { renderer.setPixelRatio(1); pts.visible = false; lite = true; } } }
       var k = 1 - Math.pow(.0016, dt);           // smooth, critically-damped style easing
       ["x", "y", "ry", "s"].forEach(function (p) { pose[p] += (target[p] - pose[p]) * k; });
       cx += (mx - cx) * k; cy += (my - cy) * k;
@@ -1103,7 +1112,7 @@ window.__SCREENS__ = [
     }
     root.classList.add("gl-on"); start();
   }
-  window.addEventListener("load", function () { safe(initGL, "gl"); });
+  window.addEventListener("load", function () { setTimeout(function () { safe(initGL, "gl"); }, reduce ? 0 : 1400); });
 })();
 </script>
 </body>
