@@ -2,7 +2,7 @@
 
 Web de TR Studio, estudio de diseño y desarrollo web en Cambrils (Biel Torres y Marxal Rofes).
 
-Es una web estática de un solo archivo (`index.html`): fuentes, imágenes y código van incluidos, sin dependencias externas ni cookies.
+Web estática (`index.html` + `fonts/`, `img/`, `lib/`), sin dependencias externas ni cookies. El 3D del inicio usa three.js (MIT), incluido en `lib/`.
 
 ## Publicar en Netlify
 
