@@ -389,6 +389,39 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 .faq details p { animation: faqIn .5s var(--soft-ease); }
 @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } }
 
+
+/* ---------- tu próximo diseño: step-by-step guide ---------- */
+.guide { position: relative; display: grid; gap: 12px; }
+.guide::before { content: ""; position: absolute; left: 27px; top: 30px; bottom: 30px; width: 1px; background: linear-gradient(180deg, rgba(122,167,255,.7), rgba(180,140,255,.5), rgba(94,227,160,.6)); }
+.gstep { position: relative; display: grid; grid-template-columns: 56px 150px 1fr; gap: 22px; align-items: center; padding: 16px 22px 16px 0; border-radius: 20px; border: 1px solid transparent; }
+.gstep:hover { border-color: var(--line); background: var(--glass-2); }
+.gstep:hover .ly2 { transform: translateZ(30px); } .gstep:hover .ly3 { transform: translateZ(60px); }
+.gstep__n { position: relative; z-index: 1; width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font: 800 17px/1 var(--display); background: #0b1222; border: 1px solid rgba(122,167,255,.55); box-shadow: 0 0 24px -6px rgba(122,167,255,.7); }
+.gstep .viz { height: 104px; margin: 0; }
+.gstep h4 { font: 700 20px/1.2 var(--display); letter-spacing: -.02em; }
+.gstep p { margin-top: 6px; color: var(--soft); font-size: 15px; max-width: 62ch; }
+.gstep__you { display: inline-flex; gap: 6px; margin-top: 10px; padding: 6px 12px; border-radius: 999px; font-size: 13px; color: var(--soft); background: rgba(122,167,255,.08); border: 1px solid rgba(122,167,255,.22); }
+.gstep__you b { color: var(--volt); font-weight: 600; }
+.pin--v { background: #b48cff; box-shadow: 0 0 18px #b48cff, 0 0 40px rgba(180,140,255,.6); }
+.gend { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(22px, 4vw, 48px); align-items: center; margin-top: clamp(26px, 4vw, 40px); padding: clamp(22px, 3.5vw, 40px); border-radius: 24px; border: 1px solid rgba(122,167,255,.45); background: linear-gradient(160deg, rgba(27,75,168,.42), rgba(15,42,92,.3) 50%, rgba(7,11,22,.6)); box-shadow: 0 40px 100px -40px rgba(122,167,255,.45); }
+.gend h3 { margin-top: 14px; font: 800 clamp(30px, 3.6vw, 48px)/1 var(--display); letter-spacing: -.045em; }
+.gend > div > p:not(.kick) { margin-top: 14px; color: var(--soft); font-size: 16.5px; max-width: 46ch; }
+.gend .contact__box { background: rgba(5,7,13,.45); }
+.view .guide > *, .view .gend { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--soft-ease), transform .7s var(--soft-ease), border-color .35s, background .35s; }
+.view.on .guide > *, .view.on .gend { opacity: 1; transform: none; }
+.view.on .guide > *:nth-child(1) { transition-delay: .2s; } .view.on .guide > *:nth-child(2) { transition-delay: .27s; } .view.on .guide > *:nth-child(3) { transition-delay: .34s; }
+.view.on .guide > *:nth-child(4) { transition-delay: .41s; } .view.on .guide > *:nth-child(5) { transition-delay: .48s; } .view.on .gend { transition-delay: .55s; }
+@media (max-width: 980px) { .gend { grid-template-columns: 1fr; } .gstep { grid-template-columns: 56px 110px 1fr; } }
+@media (max-width: 600px) {
+  .guide::before { left: 21px; }
+  .gstep { grid-template-columns: 44px 1fr; gap: 6px 14px; padding: 12px 0; align-items: start; }
+  .gstep__n { width: 44px; height: 44px; font-size: 14px; }
+  .gstep .viz { display: none; }
+  .gstep h4 { font-size: 18px; margin-top: 10px; }
+  .gend { padding: 22px 16px; } .gend .contact__box { padding: 16px; } .gend .btn { padding: 0 18px; white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) { .view .guide > *, .view .gend { opacity: 1 !important; transform: none !important; } }
+
 @media (max-width: 1320px) {
   .menu, .top > .cta { display: none; }
   .burger { display: grid; }
@@ -438,7 +471,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   body { overflow: auto; } .intro, .hero-sk, .gl, .screen-label, .burger, .mmenu { display: none !important; }
   .home { position: relative; min-height: 100vh; pointer-events: auto; } .home h1 .ln > span { transform: none; }
   .view { position: relative; inset: auto; opacity: 1; visibility: visible; transform: none; filter: none; overflow: visible; }
-  .view .panel > *, .view :is(.grid4, .grid2, .steps, .facts, .founders, .pricing, .legal-links, .chips, .faq, .contact) > * { opacity: 1; transform: none; }
+  .view .panel > *, .view :is(.grid4, .grid2, .steps, .facts, .founders, .pricing, .legal-links, .chips, .faq, .contact, .guide) > *, .view .gend { opacity: 1; transform: none; }
   .back { display: none; } .sk img { opacity: 1; }
 </style></noscript>
 </head>
@@ -595,16 +628,28 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   <div class="view__in"><div class="panel">
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
-      <div><p class="kick">03 <b>/ Tu próximo diseño</b></p><h2 id="t-td">De la idea a tu web, <em class="s">en cuatro pasos.</em></h2></div>
-      <p>Así trabajamos contigo: sin compromiso hasta que ves tu boceto, y acompañándote también después de publicarla.</p>
+      <div><p class="kick">03 <b>/ Tu próximo diseño</b></p><h2 id="t-td">Cómo empezar <em class="s">tu web, paso a paso.</em></h2></div>
+      <p>Empezar es más fácil de lo que parece. Esto es todo lo que pasa desde que nos escribes hasta que tu web está online.</p>
     </div>
-    <ol class="steps">
-      <li class="step"><div class="viz viz--talk" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="bub b1"></i></span><span class="ly ly2"><i class="bub b2"></i></span><span class="ly ly3"><i class="bub b3"></i></span></div></div><h4>Hablamos</h4><p>Una llamada o un café. Nos cuentas tu negocio y lo que necesitas.</p></li>
-      <li class="step"><div class="viz viz--sketch" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="wf"></i></span><span class="ly ly2"><i class="wf wf2"></i></span><span class="ly ly3"><i class="wf wf3"></i></span></div></div><h4>Boceto sin coste</h4><p>Ves tu web antes de decidir. Si no te convence, no pagas nada.</p></li>
-      <li class="step"><div class="viz viz--build" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="code"></i></span><span class="ly ly2"><i class="ui"></i></span><span class="ly ly3"><i class="cal"></i></span></div></div><h4>Diseño y desarrollo</h4><p>La construimos, conectamos las reservas y la ajustamos contigo.</p></li>
-      <li class="step"><div class="viz viz--launch" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="ring"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin"></i></span></div></div><h4>Publicación</h4><p>La publicamos, te enseñamos a gestionarla y seguimos contigo.</p></li>
+    <ol class="guide">
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">01</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="bub b1"></i></span><span class="ly ly2"><i class="bub b2"></i></span><span class="ly ly3"><i class="bub b3"></i></span></div></div><div class="gstep__t"><h4>Escríbenos</h4><p>Mándanos un WhatsApp con el nombre de tu negocio y a qué te dedicas. Si tienes Instagram o ficha de Google, pásanosla: así llegamos a la llamada con ideas.</p><span class="gstep__you"><b>Tú:</b> 2 minutos</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">02</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="cal"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin pin--v"></i></span></div></div><div class="gstep__t"><h4>Hablamos 15 minutos</h4><p>Una llamada de 18:00 a 20:00 o un café en Cambrils. Nos cuentas qué necesitas (reservas, carta, galería, precios…) y resolvemos tus dudas.</p><span class="gstep__you"><b>Tú:</b> 15 minutos</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">03</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="wf"></i></span><span class="ly ly2"><i class="wf wf2"></i></span><span class="ly ly3"><i class="wf wf3"></i></span></div></div><div class="gstep__t"><h4>Ves tu boceto, gratis</h4><p>Diseñamos cómo se verá tu web para que la veas antes de decidir nada. Si no te convence, no pagas.</p><span class="gstep__you"><b>Tú:</b> decirnos qué te gusta</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">04</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="code"></i></span><span class="ly ly2"><i class="ui"></i></span><span class="ly ly3"><i class="cal"></i></span></div></div><div class="gstep__t"><h4>La construimos</h4><p>En 1–2 semanas: diseño final, reservas online, Google y textos legales. Solo te pedimos tu logo, unas fotos, tus servicios con precios y tu horario.</p><span class="gstep__you"><b>Tú:</b> pasarnos el material</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">05</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="ring"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin"></i></span></div></div><div class="gstep__t"><h4>Publicamos y seguimos contigo</h4><p>La ponemos online con tu dominio, te enseñamos a gestionarla y, si quieres, nos encargamos del mantenimiento cada mes.</p><span class="gstep__you"><b>Tú:</b> empezar a recibir clientes</span></div></li>
     </ol>
-    <div class="home__cta" style="margin-top:28px"><a class="btn btn--volt" href="#contacto" data-wa data-wa-text="¡Hola! Me gustaría empezar el diseño de la web de mi negocio. ¿Hablamos? ¡Gracias!"><svg class="ic"><use href="#i-wa"/></svg>Empezar mi diseño</a><a class="btn btn--ghost" href="#precios">Ver precios</a></div>
+    <div class="gend">
+      <div>
+        <p class="kick">Último paso <b>/ Te toca a ti</b></p>
+        <h3>Contacta con nosotros y <em class="s">demos vida a tu proyecto.</em></h3>
+        <p>Escríbenos hoy: te respondemos en menos de 12 horas y preparamos tu boceto sin coste ni compromiso.</p>
+      </div>
+      <div class="contact__box">
+        <a class="btn btn--volt" href="#contacto" data-wa data-wa-text="¡Hola! Me gustaría empezar el diseño de la web de mi negocio. ¿Hablamos? ¡Gracias!"><svg class="ic"><use href="#i-wa"/></svg>Empezar por WhatsApp</a>
+        <a class="btn btn--ghost" href="#contacto" data-mail hidden><svg class="ic"><use href="#i-mail"/></svg>Enviar un email</a>
+        <ul><li><svg class="ic"><use href="#i-clock"/></svg>Respuesta en menos de 12 h</li><li><svg class="ic"><use href="#i-wa"/></svg>Llamadas y consultas de 18:00 a 20:00</li><li><svg class="ic"><use href="#i-pin"/></svg>Cambrils, Tarragona</li><li><svg class="ic"><use href="#i-check"/></svg>Boceto sin coste</li></ul>
+      </div>
+    </div>
   </div></div>
 </section>
 
@@ -870,7 +915,7 @@ window.__SCREENS__ = [
       var url = "https://wa.me/" + B.whatsapp + "?text=" + encodeURIComponent(B.whatsappText || "");
       $$("[data-wa]").forEach(function (a) { var tx = a.getAttribute("data-wa-text"); a.href = tx ? "https://wa.me/" + B.whatsapp + "?text=" + encodeURIComponent(tx) : url; a.target = "_blank"; a.rel = "noopener"; });
     }
-    var m = $("[data-mail]"); if (m && B.email && B.email.indexOf("{{") < 0) { m.href = "mailto:" + B.email; m.hidden = false; }
+    if (B.email && B.email.indexOf("{{") < 0 && B.email.indexOf("@") > 0) $$("[data-mail]").forEach(function (m) { m.href = "mailto:" + B.email; m.hidden = false; });
     var ig = $("[data-ig]"); if (ig && B.instagram) { ig.href = "https://instagram.com/" + B.instagram.replace(/^@/, ""); ig.target = "_blank"; ig.rel = "noopener"; ig.hidden = false; }
   }, "contact");
 
