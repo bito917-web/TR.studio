@@ -422,6 +422,32 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 }
 @media (prefers-reduced-motion: reduce) { .view .guide > *, .view .gend { opacity: 1 !important; transform: none !important; } }
 
+/* ---------- "Da vida a tu web": the way in, highlighted ---------- */
+@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.menu a.hot { color: var(--ivory); font-weight: 600; margin: 0 4px; isolation: isolate; }
+.menu a.hot::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; padding: 1.5px;
+  background: conic-gradient(from var(--ang), #7aa7ff, #b48cff, #ff5c8a, #7aa7ff);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: hotSpin 4s linear infinite; }
+.menu a.hot::after { content: ""; position: absolute; inset: 0; z-index: -2; border-radius: inherit; background: linear-gradient(120deg, rgba(122,167,255,.22), rgba(180,140,255,.22)); box-shadow: 0 0 26px -6px rgba(180,140,255,.8); }
+.menu a.hot:hover::after { background: linear-gradient(120deg, rgba(122,167,255,.36), rgba(180,140,255,.36)); }
+.menu.has-pill a.hot.on { color: var(--night); }
+.menu a.hot.on::after { opacity: 0; }
+@keyframes hotSpin { to { --ang: 360deg; } }
+.hot__dot { width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: #5ee3a0; box-shadow: 0 0 10px #5ee3a0; animation: hotPulse 1.8s ease-in-out infinite; flex: none; }
+@keyframes hotPulse { 50% { box-shadow: 0 0 0 5px rgba(94,227,160,0), 0 0 14px #5ee3a0; transform: scale(1.15); } }
+.hot__tag { position: absolute; left: 50%; top: -11px; transform: translateX(-50%); padding: 3px 8px; border-radius: 999px; font: 700 9.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; color: var(--night); background: linear-gradient(90deg, #7aa7ff, #b48cff); box-shadow: 0 6px 16px -6px rgba(180,140,255,.9); pointer-events: none; }
+.menu a.hot.on .hot__tag { opacity: 0; }
+/* home call to action */
+.btn--start { position: relative; color: var(--night); background: linear-gradient(100deg, #f4efe6 0%, #c9d8ff 55%, #d9c6ff 100%); box-shadow: 0 0 0 1px rgba(255,255,255,.4), 0 18px 50px -14px rgba(180,140,255,.9); }
+.btn--start:hover { box-shadow: 0 0 0 1px rgba(255,255,255,.6), 0 22px 60px -10px rgba(180,140,255,1); }
+.btn--start .hot__dot { margin-right: 0; background: #12b76a; box-shadow: 0 0 10px #12b76a; }
+/* mobile menu row */
+.mmenu a.l--hot { margin: 6px -12px; padding: 16px 12px; border: 1px solid rgba(180,140,255,.55); border-radius: 16px; background: linear-gradient(120deg, rgba(122,167,255,.18), rgba(180,140,255,.2)); box-shadow: 0 0 30px -10px rgba(180,140,255,.9); }
+.mmenu a.l--hot span { display: grid; gap: 6px; }
+.mmenu a.l--hot em { font: 600 13px/1 var(--sans); font-style: normal; letter-spacing: .02em; color: #c9b4ff; }
+@media (prefers-reduced-motion: reduce) { .menu a.hot::before, .hot__dot { animation: none; } }
+
 @media (max-width: 1320px) {
   .menu, .top > .cta { display: none; }
   .burger { display: grid; }
@@ -524,7 +550,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   <nav class="menu" aria-label="Menú principal"><span class="pill" aria-hidden="true"></span>
     <a href="#quienes-somos">Quiénes somos</a>
     <a href="#que-hacemos">Qué hacemos</a>
-    <a href="#tu-proximo-diseno">Tu próximo diseño</a>
+    <a class="hot" href="#da-vida-a-tu-web"><i class="hot__dot" aria-hidden="true"></i>Da vida a tu web<span class="hot__tag" aria-hidden="true">Empieza aquí</span></a>
     <a href="#proyectos">Proyectos</a>
     <a href="#precios">Precios</a>
     <a href="#privacidad-y-seguridad">Privacidad</a>
@@ -537,7 +563,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 <nav class="mmenu" aria-label="Menú móvil" data-mmenu>
   <a class="l" href="#quienes-somos">Quiénes somos <small>01</small></a>
   <a class="l" href="#que-hacemos">Qué hacemos <small>02</small></a>
-  <a class="l" href="#tu-proximo-diseno">Tu próximo diseño <small>03</small></a>
+  <a class="l l--hot" href="#da-vida-a-tu-web"><span>Da vida a tu web<em>Empieza aquí a trabajar con nosotros →</em></span> <small>03</small></a>
   <a class="l" href="#proyectos">Proyectos <small>04</small></a>
   <a class="l" href="#precios">Precios <small>05</small></a>
   <a class="l" href="#privacidad-y-seguridad">Privacidad <small>06</small></a>
@@ -552,8 +578,8 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
     <h1 id="t-home"><span class="ln"><span>Tu negocio,</span></span><span class="ln"><span>al siguiente</span></span><span class="ln"><span><em class="s">nivel.</em></span></span></h1>
     <p class="home__sub fade">Diseñamos y desarrollamos webs a medida para negocios de la Costa Daurada: con reservas online, presencia en Google y todo en regla desde el primer día.</p>
     <div class="home__cta fade">
-      <a class="btn btn--ivory" href="#proyectos">Ver proyectos <svg class="ic"><use href="#i-arrow"/></svg></a>
-      <a class="btn btn--ghost" href="#que-hacemos">Qué hacemos</a>
+      <a class="btn btn--start" href="#da-vida-a-tu-web"><i class="hot__dot" aria-hidden="true"></i>Empieza tu web aquí <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
     </div>
   </div>
   <div class="home__bar fade">
@@ -623,12 +649,12 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   </div></div>
 </section>
 
-<!-- TU PRÓXIMO DISEÑO -->
-<section class="view" id="tu-proximo-diseno" aria-labelledby="t-td">
+<!-- DA VIDA A TU WEB -->
+<section class="view" id="da-vida-a-tu-web" aria-labelledby="t-td">
   <div class="view__in"><div class="panel">
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
-      <div><p class="kick">03 <b>/ Tu próximo diseño</b></p><h2 id="t-td">Cómo empezar <em class="s">tu web, paso a paso.</em></h2></div>
+      <div><p class="kick">03 <b>/ Da vida a tu web</b></p><h2 id="t-td">Cómo empezar <em class="s">tu web, paso a paso.</em></h2></div>
       <p>Empezar es más fácil de lo que parece. Esto es todo lo que pasa desde que nos escribes hasta que tu web está online.</p>
     </div>
     <ol class="guide">
@@ -920,7 +946,7 @@ window.__SCREENS__ = [
   }, "contact");
 
   /* views: each menu entry opens its own screen (hash routing) */
-  var VIEWS = ["quienes-somos", "que-hacemos", "tu-proximo-diseno", "proyectos", "precios", "privacidad-y-seguridad", "contacto"];
+  var VIEWS = ["quienes-somos", "que-hacemos", "da-vida-a-tu-web", "proyectos", "precios", "privacidad-y-seguridad", "contacto"];
   var LEGAL = ["aviso-legal", "privacidad", "cookies", "creditos"];
   var current = "inicio";
   function show(id) {
