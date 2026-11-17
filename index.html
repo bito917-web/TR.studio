@@ -117,7 +117,7 @@ body.in-view .gl { opacity: .18; }
 .mmenu a.l small { font: 500 12px/1 var(--sans); color: var(--mute); letter-spacing: .1em; }
 .menu-open .mmenu a.l { transform: none; opacity: 1; }
 .menu-open .mmenu a.l:nth-child(2) { transition-delay: .03s; } .menu-open .mmenu a.l:nth-child(3) { transition-delay: .06s; }
-.menu-open .mmenu a.l:nth-child(4) { transition-delay: .09s; } .menu-open .mmenu a.l:nth-child(5) { transition-delay: .12s; } .menu-open .mmenu a.l:nth-child(6) { transition-delay: .15s; }
+.menu-open .mmenu a.l:nth-child(4) { transition-delay: .09s; } .menu-open .mmenu a.l:nth-child(5) { transition-delay: .12s; } .menu-open .mmenu a.l:nth-child(6) { transition-delay: .15s; } .menu-open .mmenu a.l:nth-child(7) { transition-delay: .18s; }
 .mmenu .cta { margin-top: 26px; justify-content: center; min-height: 54px; }
 
 /* ---------- views (each menu item = its own screen) ---------- */
@@ -389,7 +389,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 .faq details p { animation: faqIn .5s var(--soft-ease); }
 @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } }
 
-@media (max-width: 1180px) {
+@media (max-width: 1320px) {
   .menu, .top > .cta { display: none; }
   .burger { display: grid; }
 }
@@ -491,6 +491,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   <nav class="menu" aria-label="Menú principal"><span class="pill" aria-hidden="true"></span>
     <a href="#quienes-somos">Quiénes somos</a>
     <a href="#que-hacemos">Qué hacemos</a>
+    <a href="#tu-proximo-diseno">Tu próximo diseño</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#precios">Precios</a>
     <a href="#privacidad-y-seguridad">Privacidad</a>
@@ -503,10 +504,11 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 <nav class="mmenu" aria-label="Menú móvil" data-mmenu>
   <a class="l" href="#quienes-somos">Quiénes somos <small>01</small></a>
   <a class="l" href="#que-hacemos">Qué hacemos <small>02</small></a>
-  <a class="l" href="#proyectos">Proyectos <small>03</small></a>
-  <a class="l" href="#precios">Precios <small>04</small></a>
-  <a class="l" href="#privacidad-y-seguridad">Privacidad <small>05</small></a>
-  <a class="l" href="#contacto">Contacto <small>06</small></a>
+  <a class="l" href="#tu-proximo-diseno">Tu próximo diseño <small>03</small></a>
+  <a class="l" href="#proyectos">Proyectos <small>04</small></a>
+  <a class="l" href="#precios">Precios <small>05</small></a>
+  <a class="l" href="#privacidad-y-seguridad">Privacidad <small>06</small></a>
+  <a class="l" href="#contacto">Contacto <small>07</small></a>
   <a class="cta" href="#contacto" data-wa><svg class="ic"><use href="#i-wa"/></svg>Pedir presupuesto por WhatsApp</a>
 </nav>
 
@@ -555,13 +557,6 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
         <li><strong>100 %</strong><span>A medida, sin plantillas</span></li>
       </ul>
     </div>
-    <h3 class="sub">Cómo trabajamos</h3>
-    <ol class="steps">
-      <li class="step"><div class="viz viz--talk" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="bub b1"></i></span><span class="ly ly2"><i class="bub b2"></i></span><span class="ly ly3"><i class="bub b3"></i></span></div></div><h4>Hablamos</h4><p>Una llamada o un café. Nos cuentas tu negocio y lo que necesitas.</p></li>
-      <li class="step"><div class="viz viz--sketch" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="wf"></i></span><span class="ly ly2"><i class="wf wf2"></i></span><span class="ly ly3"><i class="wf wf3"></i></span></div></div><h4>Boceto sin coste</h4><p>Ves tu web antes de decidir. Si no te convence, no pagas nada.</p></li>
-      <li class="step"><div class="viz viz--build" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="code"></i></span><span class="ly ly2"><i class="ui"></i></span><span class="ly ly3"><i class="cal"></i></span></div></div><h4>Diseño y desarrollo</h4><p>La construimos, conectamos las reservas y la ajustamos contigo.</p></li>
-      <li class="step"><div class="viz viz--launch" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="ring"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin"></i></span></div></div><h4>Publicación</h4><p>La publicamos, te enseñamos a gestionarla y seguimos contigo.</p></li>
-    </ol>
   </div></div>
 </section>
 
@@ -595,12 +590,30 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   </div></div>
 </section>
 
+<!-- TU PRÓXIMO DISEÑO -->
+<section class="view" id="tu-proximo-diseno" aria-labelledby="t-td">
+  <div class="view__in"><div class="panel">
+    <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
+    <div class="vhead">
+      <div><p class="kick">03 <b>/ Tu próximo diseño</b></p><h2 id="t-td">De la idea a tu web, <em class="s">en cuatro pasos.</em></h2></div>
+      <p>Así trabajamos contigo: sin compromiso hasta que ves tu boceto, y acompañándote también después de publicarla.</p>
+    </div>
+    <ol class="steps">
+      <li class="step"><div class="viz viz--talk" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="bub b1"></i></span><span class="ly ly2"><i class="bub b2"></i></span><span class="ly ly3"><i class="bub b3"></i></span></div></div><h4>Hablamos</h4><p>Una llamada o un café. Nos cuentas tu negocio y lo que necesitas.</p></li>
+      <li class="step"><div class="viz viz--sketch" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="wf"></i></span><span class="ly ly2"><i class="wf wf2"></i></span><span class="ly ly3"><i class="wf wf3"></i></span></div></div><h4>Boceto sin coste</h4><p>Ves tu web antes de decidir. Si no te convence, no pagas nada.</p></li>
+      <li class="step"><div class="viz viz--build" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="code"></i></span><span class="ly ly2"><i class="ui"></i></span><span class="ly ly3"><i class="cal"></i></span></div></div><h4>Diseño y desarrollo</h4><p>La construimos, conectamos las reservas y la ajustamos contigo.</p></li>
+      <li class="step"><div class="viz viz--launch" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="ring"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin"></i></span></div></div><h4>Publicación</h4><p>La publicamos, te enseñamos a gestionarla y seguimos contigo.</p></li>
+    </ol>
+    <div class="home__cta" style="margin-top:28px"><a class="btn btn--volt" href="#contacto" data-wa data-wa-text="¡Hola! Me gustaría empezar el diseño de la web de mi negocio. ¿Hablamos? ¡Gracias!"><svg class="ic"><use href="#i-wa"/></svg>Empezar mi diseño</a><a class="btn btn--ghost" href="#precios">Ver precios</a></div>
+  </div></div>
+</section>
+
 <!-- PROYECTOS -->
 <section class="view" id="proyectos" aria-labelledby="t-pr">
   <div class="view__in"><div class="panel">
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
-      <div><p class="kick">03 <b>/ Proyectos</b></p><h2 id="t-pr">Webs reales, <em class="s">ya funcionando.</em></h2></div>
+      <div><p class="kick">04 <b>/ Proyectos</b></p><h2 id="t-pr">Webs reales, <em class="s">ya funcionando.</em></h2></div>
       <p>Una selección de 3 de las 8 webs que hemos publicado. Desliza para verlas y entra a probarlas en vivo.</p>
     </div>
     <div class="rail" data-rail>
@@ -637,7 +650,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   <div class="view__in"><div class="panel">
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
-      <div><p class="kick">04 <b>/ Precios</b></p><h2 id="t-pc">Precios claros, <em class="s">sin sorpresas.</em></h2></div>
+      <div><p class="kick">05 <b>/ Precios</b></p><h2 id="t-pc">Precios claros, <em class="s">sin sorpresas.</em></h2></div>
       <p>Una web completa con todo incluido y, si quieres olvidarte de ella, un mantenimiento mensual sin permanencia.</p>
     </div>
     <div class="pricing">
@@ -664,7 +677,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   <div class="view__in"><div class="panel">
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
-      <div><p class="kick">05 <b>/ Privacidad y seguridad</b></p><h2 id="t-pv">Tu web, segura y legal <em class="s">desde el primer día.</em></h2></div>
+      <div><p class="kick">06 <b>/ Privacidad y seguridad</b></p><h2 id="t-pv">Tu web, segura y legal <em class="s">desde el primer día.</em></h2></div>
       <p>Todas las webs que hacemos cumplen la normativa española y europea, sin coste extra.</p>
     </div>
     <div class="grid4">
@@ -690,7 +703,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="contact">
       <div>
-        <p class="kick">06 <b>/ Contacto</b></p>
+        <p class="kick">07 <b>/ Contacto</b></p>
         <h2 id="t-ct" style="margin-top:14px">Cuéntanos tu proyecto. <em class="s">Sin compromiso.</em></h2>
         <p class="t">Te respondemos en menos de 12 horas con una primera propuesta y, si te encaja, preparamos un boceto de tu web sin coste.</p>
       </div>
@@ -862,7 +875,7 @@ window.__SCREENS__ = [
   }, "contact");
 
   /* views: each menu entry opens its own screen (hash routing) */
-  var VIEWS = ["quienes-somos", "que-hacemos", "proyectos", "precios", "privacidad-y-seguridad", "contacto"];
+  var VIEWS = ["quienes-somos", "que-hacemos", "tu-proximo-diseno", "proyectos", "precios", "privacidad-y-seguridad", "contacto"];
   var LEGAL = ["aviso-legal", "privacidad", "cookies", "creditos"];
   var current = "inicio";
   function show(id) {
