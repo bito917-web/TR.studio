@@ -422,7 +422,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 }
 @media (prefers-reduced-motion: reduce) { .view .guide > *, .view .gend { opacity: 1 !important; transform: none !important; } }
 
-/* ---------- "Da vida a tu web": the way in, highlighted ---------- */
+/* ---------- "Crea tu web": the way in, highlighted ---------- */
 @property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 .menu a.hot { color: var(--ivory); font-weight: 600; margin: 0 4px; isolation: isolate; }
 .menu a.hot::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; padding: 1.5px;
@@ -548,9 +548,9 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 <header class="top">
   <a class="logo" href="#inicio" aria-label="TR Studio, inicio"><svg aria-hidden="true"><use href="#tr-mark"/></svg><span>STUDIO</span></a>
   <nav class="menu" aria-label="Menú principal"><span class="pill" aria-hidden="true"></span>
+    <a class="hot" href="#crea-tu-web"><i class="hot__dot" aria-hidden="true"></i>Crea tu web<span class="hot__tag" aria-hidden="true">Empieza aquí</span></a>
     <a href="#quienes-somos">Quiénes somos</a>
     <a href="#que-hacemos">Qué hacemos</a>
-    <a class="hot" href="#da-vida-a-tu-web"><i class="hot__dot" aria-hidden="true"></i>Da vida a tu web<span class="hot__tag" aria-hidden="true">Empieza aquí</span></a>
     <a href="#proyectos">Proyectos</a>
     <a href="#precios">Precios</a>
     <a href="#privacidad-y-seguridad">Privacidad</a>
@@ -561,9 +561,9 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 </header>
 
 <nav class="mmenu" aria-label="Menú móvil" data-mmenu>
-  <a class="l" href="#quienes-somos">Quiénes somos <small>01</small></a>
-  <a class="l" href="#que-hacemos">Qué hacemos <small>02</small></a>
-  <a class="l l--hot" href="#da-vida-a-tu-web"><span>Da vida a tu web<em>Empieza aquí a trabajar con nosotros →</em></span> <small>03</small></a>
+  <a class="l l--hot" href="#crea-tu-web"><span>Crea tu web<em>Empieza aquí a trabajar con nosotros →</em></span> <small>01</small></a>
+  <a class="l" href="#quienes-somos">Quiénes somos <small>02</small></a>
+  <a class="l" href="#que-hacemos">Qué hacemos <small>03</small></a>
   <a class="l" href="#proyectos">Proyectos <small>04</small></a>
   <a class="l" href="#precios">Precios <small>05</small></a>
   <a class="l" href="#privacidad-y-seguridad">Privacidad <small>06</small></a>
@@ -578,7 +578,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
     <h1 id="t-home"><span class="ln"><span>Tu negocio,</span></span><span class="ln"><span>al siguiente</span></span><span class="ln"><span><em class="s">nivel.</em></span></span></h1>
     <p class="home__sub fade">Diseñamos y desarrollamos webs a medida para negocios de la Costa Daurada: con reservas online, presencia en Google y todo en regla desde el primer día.</p>
     <div class="home__cta fade">
-      <a class="btn btn--start" href="#da-vida-a-tu-web"><i class="hot__dot" aria-hidden="true"></i>Empieza tu web aquí <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--start" href="#crea-tu-web"><i class="hot__dot" aria-hidden="true"></i>Empieza tu web aquí <svg class="ic"><use href="#i-arrow"/></svg></a>
       <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
     </div>
   </div>
@@ -592,12 +592,42 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
 </main>
 <p class="screen-label" aria-hidden="true"><i></i><span data-screen-name>RFSTYLEE · Barbería, Cambrils</span></p>
 
+<!-- CREA TU WEB -->
+<section class="view" id="crea-tu-web" aria-labelledby="t-td">
+  <div class="view__in"><div class="panel">
+    <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
+    <div class="vhead">
+      <div><p class="kick">01 <b>/ Crea tu web</b></p><h2 id="t-td">Cómo empezar <em class="s">tu web, paso a paso.</em></h2></div>
+      <p>Empezar es más fácil de lo que parece. Esto es todo lo que pasa desde que nos escribes hasta que tu web está online.</p>
+    </div>
+    <ol class="guide">
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">01</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="bub b1"></i></span><span class="ly ly2"><i class="bub b2"></i></span><span class="ly ly3"><i class="bub b3"></i></span></div></div><div class="gstep__t"><h4>Escríbenos</h4><p>Mándanos un WhatsApp con el nombre de tu negocio y a qué te dedicas. Si tienes Instagram o ficha de Google, pásanosla: así llegamos a la llamada con ideas.</p><span class="gstep__you"><b>Tú:</b> 2 minutos</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">02</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="cal"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin pin--v"></i></span></div></div><div class="gstep__t"><h4>Hablamos 15 minutos</h4><p>Una llamada de 18:00 a 20:00 o un café en Cambrils. Nos cuentas qué necesitas (reservas, carta, galería, precios…) y resolvemos tus dudas.</p><span class="gstep__you"><b>Tú:</b> 15 minutos</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">03</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="wf"></i></span><span class="ly ly2"><i class="wf wf2"></i></span><span class="ly ly3"><i class="wf wf3"></i></span></div></div><div class="gstep__t"><h4>Ves tu boceto, gratis</h4><p>Diseñamos cómo se verá tu web para que la veas antes de decidir nada. Si no te convence, no pagas.</p><span class="gstep__you"><b>Tú:</b> decirnos qué te gusta</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">04</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="code"></i></span><span class="ly ly2"><i class="ui"></i></span><span class="ly ly3"><i class="cal"></i></span></div></div><div class="gstep__t"><h4>La construimos</h4><p>En 1–2 semanas: diseño final, reservas online, Google y textos legales. Solo te pedimos tu logo, unas fotos, tus servicios con precios y tu horario.</p><span class="gstep__you"><b>Tú:</b> pasarnos el material</span></div></li>
+      <li class="gstep"><div class="gstep__n" aria-hidden="true">05</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="ring"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin"></i></span></div></div><div class="gstep__t"><h4>Publicamos y seguimos contigo</h4><p>La ponemos online con tu dominio, te enseñamos a gestionarla y, si quieres, nos encargamos del mantenimiento cada mes.</p><span class="gstep__you"><b>Tú:</b> empezar a recibir clientes</span></div></li>
+    </ol>
+    <div class="gend">
+      <div>
+        <p class="kick">Último paso <b>/ Te toca a ti</b></p>
+        <h3>Contacta con nosotros y <em class="s">demos vida a tu proyecto.</em></h3>
+        <p>Escríbenos hoy: te respondemos en menos de 12 horas y preparamos tu boceto sin coste ni compromiso.</p>
+      </div>
+      <div class="contact__box">
+        <a class="btn btn--volt" href="#contacto" data-wa data-wa-text="¡Hola! Me gustaría empezar el diseño de la web de mi negocio. ¿Hablamos? ¡Gracias!"><svg class="ic"><use href="#i-wa"/></svg>Empezar por WhatsApp</a>
+        <a class="btn btn--ghost" href="#contacto" data-mail hidden><svg class="ic"><use href="#i-mail"/></svg>Enviar un email</a>
+        <ul><li><svg class="ic"><use href="#i-clock"/></svg>Respuesta en menos de 12 h</li><li><svg class="ic"><use href="#i-wa"/></svg>Llamadas y consultas de 18:00 a 20:00</li><li><svg class="ic"><use href="#i-pin"/></svg>Cambrils, Tarragona</li><li><svg class="ic"><use href="#i-check"/></svg>Boceto sin coste</li></ul>
+      </div>
+    </div>
+  </div></div>
+</section>
+
 <!-- QUIÉNES SOMOS -->
 <section class="view" id="quienes-somos" aria-labelledby="t-qs">
   <div class="view__in"><div class="panel">
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
-      <div><p class="kick">01 <b>/ Quiénes somos</b></p><h2 id="t-qs">Un estudio de Cambrils con <em class="s">estándares de agencia.</em></h2></div>
+      <div><p class="kick">02 <b>/ Quiénes somos</b></p><h2 id="t-qs">Un estudio de Cambrils con <em class="s">estándares de agencia.</em></h2></div>
       <p>TR Studio es un estudio de diseño y desarrollo web fundado por Biel Torres y Marxal Rofes.</p>
     </div>
     <div class="about">
@@ -624,7 +654,7 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
   <div class="view__in"><div class="panel">
     <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
     <div class="vhead">
-      <div><p class="kick">02 <b>/ Qué hacemos</b></p><h2 id="t-qh">Todo lo que tu negocio necesita <em class="s">en internet.</em></h2></div>
+      <div><p class="kick">03 <b>/ Qué hacemos</b></p><h2 id="t-qh">Todo lo que tu negocio necesita <em class="s">en internet.</em></h2></div>
       <p>Un único equipo para el diseño, el desarrollo, las reservas, Google y el mantenimiento.</p>
     </div>
     <div class="grid4">
@@ -646,36 +676,6 @@ body:not(.in-view) .home { transition: opacity .7s var(--soft-ease) .1s, transfo
     </div>
     <h3 class="sub">Incluido en cada web</h3>
     <div class="chips"><span>Diseño a medida</span><span>Adaptada al móvil</span><span>Reservas o WhatsApp</span><span>Mapa y horario</span><span>Certificado SSL</span><span>Aviso legal</span><span>Privacidad RGPD</span><span>Política de cookies</span><span>Ficha de Google</span><span>Datos estructurados</span><span>Formación</span><span>Boceto sin coste</span></div>
-  </div></div>
-</section>
-
-<!-- DA VIDA A TU WEB -->
-<section class="view" id="da-vida-a-tu-web" aria-labelledby="t-td">
-  <div class="view__in"><div class="panel">
-    <a class="back" href="#inicio"><svg class="ic"><use href="#i-left"/></svg>Inicio</a>
-    <div class="vhead">
-      <div><p class="kick">03 <b>/ Da vida a tu web</b></p><h2 id="t-td">Cómo empezar <em class="s">tu web, paso a paso.</em></h2></div>
-      <p>Empezar es más fácil de lo que parece. Esto es todo lo que pasa desde que nos escribes hasta que tu web está online.</p>
-    </div>
-    <ol class="guide">
-      <li class="gstep"><div class="gstep__n" aria-hidden="true">01</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="bub b1"></i></span><span class="ly ly2"><i class="bub b2"></i></span><span class="ly ly3"><i class="bub b3"></i></span></div></div><div class="gstep__t"><h4>Escríbenos</h4><p>Mándanos un WhatsApp con el nombre de tu negocio y a qué te dedicas. Si tienes Instagram o ficha de Google, pásanosla: así llegamos a la llamada con ideas.</p><span class="gstep__you"><b>Tú:</b> 2 minutos</span></div></li>
-      <li class="gstep"><div class="gstep__n" aria-hidden="true">02</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="cal"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin pin--v"></i></span></div></div><div class="gstep__t"><h4>Hablamos 15 minutos</h4><p>Una llamada de 18:00 a 20:00 o un café en Cambrils. Nos cuentas qué necesitas (reservas, carta, galería, precios…) y resolvemos tus dudas.</p><span class="gstep__you"><b>Tú:</b> 15 minutos</span></div></li>
-      <li class="gstep"><div class="gstep__n" aria-hidden="true">03</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="wf"></i></span><span class="ly ly2"><i class="wf wf2"></i></span><span class="ly ly3"><i class="wf wf3"></i></span></div></div><div class="gstep__t"><h4>Ves tu boceto, gratis</h4><p>Diseñamos cómo se verá tu web para que la veas antes de decidir nada. Si no te convence, no pagas.</p><span class="gstep__you"><b>Tú:</b> decirnos qué te gusta</span></div></li>
-      <li class="gstep"><div class="gstep__n" aria-hidden="true">04</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="code"></i></span><span class="ly ly2"><i class="ui"></i></span><span class="ly ly3"><i class="cal"></i></span></div></div><div class="gstep__t"><h4>La construimos</h4><p>En 1–2 semanas: diseño final, reservas online, Google y textos legales. Solo te pedimos tu logo, unas fotos, tus servicios con precios y tu horario.</p><span class="gstep__you"><b>Tú:</b> pasarnos el material</span></div></li>
-      <li class="gstep"><div class="gstep__n" aria-hidden="true">05</div><div class="viz" aria-hidden="true"><div class="iso"><span class="ly ly1"><i class="ring"></i></span><span class="ly ly2"><i class="ring r2"></i></span><span class="ly ly3"><i class="pin"></i></span></div></div><div class="gstep__t"><h4>Publicamos y seguimos contigo</h4><p>La ponemos online con tu dominio, te enseñamos a gestionarla y, si quieres, nos encargamos del mantenimiento cada mes.</p><span class="gstep__you"><b>Tú:</b> empezar a recibir clientes</span></div></li>
-    </ol>
-    <div class="gend">
-      <div>
-        <p class="kick">Último paso <b>/ Te toca a ti</b></p>
-        <h3>Contacta con nosotros y <em class="s">demos vida a tu proyecto.</em></h3>
-        <p>Escríbenos hoy: te respondemos en menos de 12 horas y preparamos tu boceto sin coste ni compromiso.</p>
-      </div>
-      <div class="contact__box">
-        <a class="btn btn--volt" href="#contacto" data-wa data-wa-text="¡Hola! Me gustaría empezar el diseño de la web de mi negocio. ¿Hablamos? ¡Gracias!"><svg class="ic"><use href="#i-wa"/></svg>Empezar por WhatsApp</a>
-        <a class="btn btn--ghost" href="#contacto" data-mail hidden><svg class="ic"><use href="#i-mail"/></svg>Enviar un email</a>
-        <ul><li><svg class="ic"><use href="#i-clock"/></svg>Respuesta en menos de 12 h</li><li><svg class="ic"><use href="#i-wa"/></svg>Llamadas y consultas de 18:00 a 20:00</li><li><svg class="ic"><use href="#i-pin"/></svg>Cambrils, Tarragona</li><li><svg class="ic"><use href="#i-check"/></svg>Boceto sin coste</li></ul>
-      </div>
-    </div>
   </div></div>
 </section>
 
@@ -946,7 +946,7 @@ window.__SCREENS__ = [
   }, "contact");
 
   /* views: each menu entry opens its own screen (hash routing) */
-  var VIEWS = ["quienes-somos", "que-hacemos", "da-vida-a-tu-web", "proyectos", "precios", "privacidad-y-seguridad", "contacto"];
+  var VIEWS = ["crea-tu-web", "quienes-somos", "que-hacemos", "proyectos", "precios", "privacidad-y-seguridad", "contacto"];
   var LEGAL = ["aviso-legal", "privacidad", "cookies", "creditos"];
   var current = "inicio";
   function show(id) {
